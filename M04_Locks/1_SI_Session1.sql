@@ -1,0 +1,12 @@
+SET TRANSACTION ISOLATION LEVEL SNAPSHOT;
+
+
+BEGIN TRAN
+
+
+SELECT Saldo FROM Konto;
+
+--Session 2 ausführen lassen
+
+SELECT Saldo FROM Konto;
+

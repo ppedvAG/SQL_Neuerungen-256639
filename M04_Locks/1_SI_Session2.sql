@@ -1,0 +1,4 @@
+USE TESTDB;
+GO
+
+UPDATE Konto SET Saldo = 500;

@@ -27,6 +27,8 @@ insert into Contacts
 (Lastname,Firstname,Birthday, Phone, email) 
 select 'Wayne', 'Bruce','3.4.2012', '08677-3303003', 'brucew@gotham.city' 
 
+select * from contacts
+
 --Und nun die Änderungen, die zu einer Versionierung der Datensätze führt 
 WAITFOR DELAY '00:00:02'
 update contacts set email = 'wer@earth.de' where cid = 1 
@@ -48,9 +50,9 @@ select * from ContactsHistory
 
 select * from contactshistory 
 where 
-    Startdatum >= '2026-02-03 11:22:08.8997518' 
+    Startdatum >= '2026-02-16 12:32:42.9271155' 
     and 
-    Enddatum <= '2026-02-03 11:22:19.3665463'  
+    Enddatum <= '2026-02-16 12:34:02.0561587'  
 
 --Noch besser mit SYSTEM_TIME
 --SYSTEM_TIME Optionen:
@@ -61,7 +63,7 @@ where
 -- ALL – komplette Historie
 
  select * from contacts 
-    FOR SYSTEM_TIME BETWEEN '2026-02-03 11:22:08.8997518' AND '2026-02-03 11:22:19.3665463' 
+    FOR SYSTEM_TIME BETWEEN '2026-02-16 12:32:42.9271155' AND '2026-02-16 12:34:02.0561587' 
     where cid =1 
  select * from contacts 
     FOR SYSTEM_TIME FROM '2026-02-03 11:22:08.8997518' TO '2026-02-03 11:22:19.3665463' 
@@ -79,6 +81,8 @@ select * from contacts
 --Was wenn..
 Alter Table contacts	add spx int
 Alter Table contacts	add spy int
+
+select * from contactshistory
 
 
 update contacts set Firstname= 'Chris', spx=2 where cid = 1

@@ -4,6 +4,10 @@
    Beschreibung: wie versioniere ich DAtensätze?
    ============================================= */
 
+   create database temporalTables
+
+   USE TemporalTables
+
 --Temporale Tabelle erstellen
 
 create table dbo.TemporaleKunden
