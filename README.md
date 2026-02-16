@@ -10,3 +10,6 @@ KursRepository zu Kurs SQL Server - Neuerungen und Migration der ppedv AG
 --Setup : Wegfall der Master DataServices
 --        KI Support
 
+
+Use northwind
+
